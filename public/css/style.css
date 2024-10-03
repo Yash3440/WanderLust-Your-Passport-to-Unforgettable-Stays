@@ -305,3 +305,14 @@ input, textarea {
     gap: 20px;
 }
  
+
+.f-info-socials a {
+    color: #333; /* Change this to match your color scheme */
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.f-info-socials a:hover {
+    color: #007bff; /* Change this to your preferred hover color */
+}

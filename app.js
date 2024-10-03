@@ -5,6 +5,7 @@ if(process.env.NODE_ENV != "production")
     }
     // console.log(process.env.secret); // it print hte secrate value
     
+    console.log("ATLASDB_URL:", process.env.ATLASDB_URL);
     
     const express=require("express");
     const app=express();
@@ -30,8 +31,9 @@ if(process.env.NODE_ENV != "production")
     
     // let MONGO_URL = "mongodb://127.0.0.1:27017/wandarlust";
     
-    const dbUrl = process.env.ATLASDB_URL ||  'mongodb://127.0.0.1:27017/wandarlust';
-    
+    //const dbUrl = process.env.ATLASDB_URL ||  'mongodb://127.0.0.1:27017/wandarlust';
+    const dbUrl = process.env.ATLASDB_URL;
+    console.log("Database URL:", dbUrl);
     
     
     main().then(()=>{
@@ -104,11 +106,11 @@ if(process.env.NODE_ENV != "production")
         next();
     });
     
-    app.use((req, res, next) => {
-        console.log('Current User:', req.user);
-        res.locals.currUser = req.user || null;
-        next();
-    });
+    // app.use((req, res, next) => {
+    //     console.log('Current User:', req.user);
+    //     res.locals.currUser = req.user || null;
+    //     next();
+    // });
     
     
     
